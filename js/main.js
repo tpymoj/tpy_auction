@@ -1221,7 +1221,7 @@ auction_items.forEach(function(item){
         class: 'gallery--item--image lazy',
     });
 
-    itemImage.attr('data-src', 'img/10232018__' + String(item.item_number) + '_.JPG');
+    itemImage.attr('data-src', 'img/10232018_' + String(item.item_number) + '.JPG');
 
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
