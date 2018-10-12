@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -286,16 +288,15 @@ textarea {
     }
 }
 
-.page--title {
-    font-weight: 600;
-    font-size: 24px;
-    text-align: center;
+body {
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
-.page--subtitle {
-    font-weight: 500;
-    font-size: 18;
+.page--title {
+    font-weight: 600;
+    font-size: 48px;
     text-align: center;
+    margin-bottom: 90px;
 }
 
 .gallery {
@@ -303,6 +304,11 @@ textarea {
     flex-wrap: wrap;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.gallery::after {
+    content: '';
+    flex-grow: 1000000000;
 }
 
 .gallery--item {
@@ -317,34 +323,68 @@ textarea {
     margin-right: 15px;
     background-color: white;
     transition: box-shadow 0.3s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .gallery--item:hover {
     box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
     transform: scale(1.08);
+    z-index: 99;
 }
 
 .gallery--item--image-container {
     overflow: hidden;
     border-radius: 5px;
-    max-height: 150px;
-    max-width: 200px;
 }
 
 .gallery--item--info-container {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 20px;
     max-width: 200px;
+    position: relative;
 }
 
 .gallery--item--image {
-    width: 100%;
+    max-height: 150px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
 }
 
 .gallery--item--name {
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.gallery--item--description {
+    font-size: 14px;
 }
 
 .gallery--item--label {
     text-align: center;
+}
+
+.gallery--item--label__primary {
+    position: absolute;
+    display: block;
+    top: -15px;
+    right: -10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #069;
+}
+
+.gallery--item--label__secondary {
+    position: absolute;
+    display: block;
+    top: -15px;
+    left: -10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: rgb(80,80,80, 1);
+    border: 1px solid rgba(80,80,80, 0.8);
+    background-color: rgba(255, 255, 255, .95);
 }

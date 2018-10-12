@@ -1195,7 +1195,6 @@ var auction_items = [
 
 
 auction_items.forEach(function(item){
-    console.log(item);
     var itemContainer = jQuery('<div/>', {
         class: 'gallery--item',
     });
@@ -1204,15 +1203,15 @@ auction_items.forEach(function(item){
         class: 'gallery--item--info-container',
     });
 
-    var itemName = jQuery('<h3/>', {
+    var itemName = jQuery('<h2/>', {
         class: 'gallery--item--name',
     });
     itemName.text(item.item_name);
 
-    var itemDescription = jQuery('<h3/>', {
+    var itemDescription = jQuery('<p/>', {
         class: 'gallery--item--description',
     });
-    itemDescription.text(item.item_description);
+    itemDescription.text(item.item_description + ', ' + item.quantity + item.unit);
 
     var itemImageContainer = jQuery('<div/>', {
         class: 'gallery--item--image-container',
@@ -1227,26 +1226,20 @@ auction_items.forEach(function(item){
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
     });
-    itemLabelPrimary.text(item.starting_bid);
+    itemLabelPrimary.text('起標價 $' + item.starting_bid);
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
     });
-    itemLabelSecondary.text(item.quantity);
-
-    var itemLabelTertiary = jQuery('<label/>', {
-        class: 'gallery--item--label gallery--item--label__tertiary',
-    });
-    itemLabelTertiary.text(item.item_number);
+    itemLabelSecondary.text(item.item_number);
 
 
     itemName.appendTo(itemInfoContainer);
     itemDescription.appendTo(itemInfoContainer);
     itemImage.appendTo(itemImageContainer);
-    itemLabelPrimary.appendTo(itemInfoContainer);
-    itemLabelSecondary.appendTo(itemInfoContainer);
-    itemLabelTertiary.appendTo(itemInfoContainer);
     itemImageContainer.appendTo(itemContainer);
     itemInfoContainer.appendTo(itemContainer);
+    itemLabelPrimary.appendTo(itemContainer);
+    itemLabelSecondary.appendTo(itemContainer);
     itemContainer.appendTo($('.gallery'));
 });
