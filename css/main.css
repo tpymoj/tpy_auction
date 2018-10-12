@@ -398,11 +398,12 @@ body {
 .gallery--item--label__secondary {
     position: absolute;
     display: block;
-    top: -15px;
-    left: -10px;
-    padding: 6px 10px;
+    bottom: -10px;
+    left: -12px;
+    padding: 4px 8px;
     border-radius: 10px;
     color: rgb(80,80,80, 1);
     border: 1px solid rgba(80,80,80, 0.8);
     background-color: rgba(255, 255, 255, .95);
+    font-size: 14px;
 }

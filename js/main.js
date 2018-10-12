@@ -1218,10 +1218,10 @@ auction_items.forEach(function(item){
     });
 
     var itemImage = jQuery('<img />', {
-        class: 'gallery--item--image',
+        class: 'gallery--item--image lazy',
     });
 
-    itemImage.attr('src', 'img/10232018__' + String(item.item_number) + '_.JPG');
+    itemImage.attr('data-src', 'img/10232018__' + String(item.item_number) + '_.JPG');
 
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
@@ -1242,4 +1242,10 @@ auction_items.forEach(function(item){
     itemLabelPrimary.appendTo(itemContainer);
     itemLabelSecondary.appendTo(itemContainer);
     itemContainer.appendTo($('.gallery'));
+});
+
+$('document').ready(function(){
+    var myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy"
+    });    
 });
