@@ -1226,7 +1226,7 @@ auction_items.forEach(function(item){
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
     });
-    itemLabelPrimary.text('起標價 $' + item.starting_bid);
+    itemLabelPrimary.text('底價 $' + item.starting_bid);
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
