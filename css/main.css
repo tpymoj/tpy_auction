@@ -296,7 +296,24 @@ body {
     font-weight: 600;
     font-size: 48px;
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 30px;
+    padding-bottom: 0;
+    background-color: rgb(255, 59, 48);
+    color: white;
+}
+
+.page--subtitle {
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 30px;
+    background-color: rgb(255, 59, 48);
+    color: white;
 }
 
 .gallery {
@@ -359,7 +376,7 @@ body {
 }
 
 .gallery--item--description {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .gallery--item--label {
