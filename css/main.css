@@ -334,6 +334,9 @@ body {
 }
 
 .gallery--item--container {
+    display: block;
+    color: rgb(30,30,30);
+    text-decoration: none;
     flex: 1;
     min-width: 360px;
     display: flex;
@@ -407,8 +410,8 @@ body {
 .gallery--item--label__secondary {
     position: absolute;
     display: block;
-    bottom: -10px;
-    left: -12px;
+    bottom: 6px;
+    left: 6px;
     padding: 4px 8px;
     border-radius: 10px;
     color: rgb(80,80,80, 1);

@@ -1199,9 +1199,11 @@ auction_items.forEach(function(item){
         class: 'gallery--item',
     });
 
-    var itemInnerContainer = jQuery('<div/>', {
+    var itemInnerContainer = jQuery('<a/>', {
       class: 'gallery--item--container',
     });
+    itemInnerContainer.attr('href', 'img/10232018_' + String(item.item_number) + '.JPG');
+    itemInnerContainer.attr('data-lightbox', '拍賣目錄');
 
     var itemInfoContainer = jQuery('<div/>', {
         class: 'gallery--item--info-container',
