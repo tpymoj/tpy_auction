@@ -1199,6 +1199,10 @@ auction_items.forEach(function(item){
         class: 'gallery--item',
     });
 
+    var itemInnerContainer = jQuery('<div/>', {
+      class: 'gallery--item--container',
+    });
+
     var itemInfoContainer = jQuery('<div/>', {
         class: 'gallery--item--info-container',
     });
@@ -1237,10 +1241,11 @@ auction_items.forEach(function(item){
     itemName.appendTo(itemInfoContainer);
     itemDescription.appendTo(itemInfoContainer);
     itemImage.appendTo(itemImageContainer);
-    itemImageContainer.appendTo(itemContainer);
-    itemInfoContainer.appendTo(itemContainer);
-    itemLabelPrimary.appendTo(itemContainer);
-    itemLabelSecondary.appendTo(itemContainer);
+    itemImageContainer.appendTo(itemInnerContainer);
+    itemInfoContainer.appendTo(itemInnerContainer);
+    itemLabelPrimary.appendTo(itemInnerContainer);
+    itemLabelSecondary.appendTo(itemInnerContainer);
+    itemInnerContainer.appendTo(itemContainer);
     itemContainer.appendTo($('.gallery'));
 });
 
