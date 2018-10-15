@@ -371,7 +371,7 @@ body {
 
 .gallery--item--image-container {
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .gallery--item--info-container {
