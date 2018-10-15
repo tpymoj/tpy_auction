@@ -383,10 +383,10 @@ body {
 }
 
 .gallery--item--image {
-    max-height: 150px;
-    max-width: 200px;
-    width: auto;
-    height: auto;
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .gallery--item--name {
