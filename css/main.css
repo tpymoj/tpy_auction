@@ -205,6 +205,7 @@ textarea {
     /* Style adjustments for viewports that meet the condition */
 }
 
+
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),
@@ -348,10 +349,15 @@ body {
     z-index: 1;
 }
 
-.gallery--item--container:hover {
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
-    transform: scale(1.08);
-    z-index: 99;
+@media only screen and (min-width: 768px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    .gallery--item--container:hover {
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+        transform: scale(1.08);
+        z-index: 99;
+    }
+    
 }
 
 .gallery--item--image-container {
