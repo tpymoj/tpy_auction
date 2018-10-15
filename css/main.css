@@ -291,7 +291,6 @@ textarea {
 
 body {
     font-family: 'Noto Sans TC', sans-serif;
-    margin: 0 -15px;
 }
 
 .page--title {
@@ -326,7 +325,6 @@ body {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 15px;
 }
 
 .gallery::after {
@@ -343,7 +341,6 @@ body {
     color: rgb(30,30,30);
     text-decoration: none;
     flex: 1;
-    min-width: 360px;
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
@@ -366,7 +363,10 @@ body {
         transform: scale(1.08);
         z-index: 99;
     }
-    
+
+    .gallery {
+        padding: 0 15px;
+    }
 }
 
 .gallery--item--image-container {
