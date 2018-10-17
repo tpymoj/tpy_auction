@@ -1342,6 +1342,17 @@ $('#view-list').click(function(){
   }
 });
 
+var galleryStyle = jQuery('<style/>', {});
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+if (!isIE) {
+  galleryStyle.html('.gallery { display: grid; grid-template-columns: repeat(auto-fill,minmax(380px, 1fr));}')
+} else {
+  galleryStyle.html('.gallery { display: flex; flex-wrap: wrap;}')
+}
+
+galleryStyle.appendTo($('body'));
+
 $('document').ready(function(){
     var myLazyLoad = new LazyLoad({
         elements_selector: ".lazy"
