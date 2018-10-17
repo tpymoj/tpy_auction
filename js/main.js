@@ -1193,6 +1193,43 @@ var auction_items = [
     }
   ];
 
+var list = [];
+
+function updateList(index) {
+  if (list.indexOf(index) > -1) {
+    list.splice(list.indexOf(index), 1);
+  } else {
+    list.push(index);
+  }
+  refreshState();
+}
+
+function refreshState(){
+  $('.gallery').find('.gallery--item--button__add-to-list').each(function(){
+    if (list.indexOf($(this).attr('value')) > -1) {
+      $(this).addClass('gallery--item--button__danger');
+      $(this).text('從清單移除');
+    } else {
+      $(this).removeClass('gallery--item--button__danger');
+      $(this).text('加入清單');
+    }
+  });
+  $('.gallery').find('.gallery--item--label.gallery--item--label__primary').each(function(index){
+    if (list.indexOf($(this).attr('value')) > -1) {
+      $(this).addClass('gallery--item--label__primary__active');
+    } else {
+      $(this).removeClass('gallery--item--label__primary__active');
+    }
+  });
+
+  var subtotal = 0;
+  list.forEach(function(itemNumber){
+    subtotal += parseInt(auction_items[itemNumber - 1].starting_bid.replace(/[^0-9.-]+/g,""));
+    console.log(subtotal);
+  });
+  var statusText = list.length > 0 ? '' + list.length + '件拍賣物 / 底價總和 $' + subtotal: '清單尚未加入任何拍賣物';
+  $('.bar > .flex > span').text(statusText);
+}
 
 auction_items.forEach(function(item){
     var itemContainer = jQuery('<div/>', {
@@ -1202,8 +1239,16 @@ auction_items.forEach(function(item){
     var itemInnerContainer = jQuery('<a/>', {
       class: 'gallery--item--container',
     });
-    itemInnerContainer.attr('href', 'img/10232018_' + String(item.item_number) + '.JPG');
-    itemInnerContainer.attr('data-lightbox', '拍賣目錄');
+    itemContainer.attr('value', item.item_number);
+    itemContainer.hover(function(event){
+      var galleryItem = $(event.currentTarget);
+      galleryItem.find('.gallery--item--button').each(function(index){
+        $(this).toggleClass('show');
+      });
+      galleryItem.find('.gallery--item--label').each(function(index){
+        $(this).toggleClass('show');
+      });
+    });
 
     var itemInfoContainer = jQuery('<div/>', {
         class: 'gallery--item--info-container',
@@ -1232,12 +1277,36 @@ auction_items.forEach(function(item){
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
     });
+    itemLabelPrimary.attr('value', item.item_number);
     itemLabelPrimary.text('底價 $' + item.starting_bid);
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
     });
     itemLabelSecondary.text(item.item_number);
+
+    var actionsContainer = jQuery('<div/>', {
+      class: 'gallery--item--actions-container',
+    });
+
+    var itemViewImageButton = jQuery('<a/>', {
+      class: 'gallery--item--button',
+    });
+    itemViewImageButton.attr('href', 'img/10232018_' + String(item.item_number) + '.JPG');
+    itemViewImageButton.attr('data-lightbox', item.item_number);
+    itemViewImageButton.attr('data-title', '#' + item.item_number + ' ' + item.item_name);
+    itemViewImageButton.text('看大圖');
+
+    var itemAddToListButton = jQuery('<button/>', {
+      class: 'gallery--item--button gallery--item--button__add-to-list',
+    });
+    itemAddToListButton.attr('value', item.item_number);
+    itemAddToListButton.text('加入清單');
+    itemAddToListButton.click(function(){
+      var value = $(this).attr('value');
+      updateList(value);
+    });
+    
 
 
     itemName.appendTo(itemInfoContainer);
@@ -1247,8 +1316,30 @@ auction_items.forEach(function(item){
     itemInfoContainer.appendTo(itemInnerContainer);
     itemLabelPrimary.appendTo(itemInnerContainer);
     itemLabelSecondary.appendTo(itemInnerContainer);
+    itemViewImageButton.appendTo(actionsContainer)
+    itemAddToListButton.appendTo(actionsContainer);
+    actionsContainer.appendTo(itemInnerContainer);
     itemInnerContainer.appendTo(itemContainer);
     itemContainer.appendTo($('.gallery'));
+});
+
+$('#view-list').click(function(){
+  if (list.length > 0) {
+    var subtotal = 0;
+    list.forEach(function(itemNumber){
+      subtotal += parseInt(auction_items[itemNumber - 1].starting_bid.replace(/[^0-9.-]+/g,""));
+      console.log(subtotal);
+    });
+    var alertText = '';
+    list.forEach(function(itemNumber){
+      var item = auction_items[itemNumber]
+      alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.starting_bid + '\n';
+    });
+    alertText += '底價總合 $' + subtotal;
+    alert(alertText);
+  } else {
+    alert('清單尚未加入任何拍賣物');
+  }
 });
 
 $('document').ready(function(){
