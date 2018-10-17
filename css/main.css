@@ -375,11 +375,12 @@ button:focus {outline:0;}
 
 .gallery--item--button__danger {
     background-color: rgb(255, 59, 48) !important;
-    border: none !important;
+    border: 1px solid rgb(255, 59, 48) !important;
 }
 
 .gallery--item--button__danger:hover {
     background-color: rgb(255, 75, 66) !important;
+    border: 1px solid rgb(255, 75, 66) !important;
 }
 
 
@@ -521,7 +522,7 @@ button:focus {outline:0;}
 
 .gallery--item--label__primary__active {
     background-color: #00c853 !important;
-    border: none !important;
+    border: 1px solid #00c853 !important;
     color: white !important;
 }
 
