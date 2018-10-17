@@ -1332,7 +1332,7 @@ $('#view-list').click(function(){
     });
     var alertText = '';
     list.forEach(function(itemNumber){
-      var item = auction_items[itemNumber]
+      var item = auction_items[itemNumber - 1]
       alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.starting_bid + '\n';
     });
     alertText += '底價總合 $' + subtotal;
