@@ -396,13 +396,33 @@ button:focus {outline:0;}
 }
 
 .bar {
-    display: none;
     height: 60px;
     background-color: #122B88;
     color: white;
     z-index: 100;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.15);
     position: relative;
+}
+
+.bar > .flex {
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    height: 100%;
+}
+
+.bar > .flex > span {
+    margin-right: 20px;
+}
+
+.bar__bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.bar__full {
+    width: 100%;
 }
 
 @media only screen and (min-width: 769px) {
@@ -448,12 +468,35 @@ button:focus {outline:0;}
     .gallery--item--label__primary.show {
         background-color: rgb(30,30,30);
         color: white;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .bar > .flex {
+        right: 20px;
+    }
+
+    .bar > .flex > span {
+        margin-right: 20px;
     }
 
     .bar {
-        display: block;
+        font-size: 90%;
     }
-    
+}
+
+@media only screen and (max-width: 320px) {
+    .bar > .flex {
+        right: 10px;
+    }
+
+    .bar > .flex > span {
+        margin-right: 10px;
+    }
+
+    .bar {
+        font-size: 80%;
+    }
 }
 
 .button {
@@ -549,26 +592,4 @@ button:focus {outline:0;}
 
 .flex__column {
     flex-direction: column;
-}
-
-
-.bar > .flex {
-    justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    right: 30px;
-    height: 100%;
-}
-
-.bar > .flex > span {
-    margin-right: 20px;
-}
-
-.bar__bottom {
-    position: fixed;
-    bottom: 0;
-}
-
-.bar__full {
-    width: 100%;
 }
