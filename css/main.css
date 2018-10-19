@@ -327,7 +327,8 @@ header {
 
 .gallery {
     margin-bottom: 50px;
-    margin-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    margin-bottom: calc(50px + var(--safe-area-inset-bottom));
 }
 
 .gallery::after {
