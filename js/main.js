@@ -1,49 +1,3 @@
-window.Clipboard = (function(window, document, navigator) {
-  var textArea,
-      copy;
-
-  function isOS() {
-      return navigator.userAgent.match(/ipad|iphone/i);
-  }
-
-  function createTextArea(text) {
-      textArea = document.createElement('textArea');
-      textArea.value = text;
-      document.body.appendChild(textArea);
-  }
-
-  function selectText() {
-      var range,
-          selection;
-
-      if (isOS()) {
-          range = document.createRange();
-          range.selectNodeContents(textArea);
-          selection = window.getSelection();
-          selection.removeAllRanges();
-          selection.addRange(range);
-          textArea.setSelectionRange(0, 999999);
-      } else {
-          textArea.select();
-      }
-  }
-
-  function copyToClipboard() {        
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-  }
-
-  copy = function(text) {
-      createTextArea(text);
-      selectText();
-      copyToClipboard();
-  };
-
-  return {
-      copy: copy
-  };
-})(window, document, navigator);
-
 var auction_items = [
     {
       "item_number": 1,
@@ -1376,26 +1330,26 @@ auction_items.forEach(function(item){
     itemContainer.appendTo($('.gallery'));
 });
 
-$('#view-list').click(function(){
-  if (list.length > 0) {
-    var subtotal = 0;
-    list.forEach(function(itemNumber){
-      subtotal += parseInt(auction_items[itemNumber - 1].starting_bid.replace(/[^0-9.-]+/g,""));
-    });
-    var alertText = '';
-    list.forEach(function(itemNumber){
-      var item = auction_items[itemNumber - 1]
-      alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.starting_bid + '\n';
-    });
-    alertText += '\n底價總合 $' + subtotal;
-    var copyList = confirm('複製清單內容？\n\n' + alertText);
-    if (copyList) {
-      Clipboard.copy(alertText);
+new ClipboardJS('#view-list', {
+  text: function() {
+    if (list.length > 0) {
+      var subtotal = 0;
+      list.forEach(function(itemNumber){
+        subtotal += parseInt(auction_items[itemNumber - 1].starting_bid.replace(/[^0-9.-]+/g,""));
+      });
+      var alertText = '';
+      list.forEach(function(itemNumber){
+        var item = auction_items[itemNumber - 1]
+        alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.starting_bid + '\n';
+      });
+      alertText += '\n底價總合 $' + subtotal;
+      alert('已將清單內容複製');
+      return alertText;
+    } else {
+      alert('清單尚未加入任何拍賣物');
+      return '';
     }
-  } else {
-    alert('清單尚未加入任何拍賣物');
-  }
-});
+}});
 
 var galleryStyle = jQuery('<style/>', {});
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
