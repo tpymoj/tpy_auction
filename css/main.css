@@ -326,7 +326,7 @@ header {
 }
 
 .gallery {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .gallery::after {
@@ -395,22 +395,35 @@ button:focus {outline:0;}
     height: 40px;
 }
 
+
+
 .bar {
-    height: 60px;
-    background-color: #122B88;
-    color: white;
     z-index: 100;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.15);
     position: relative;
+}
+
+#tips-bar {
+    background-color: rgb(30,30,30);
+    color: white;
+}
+
+#action-bar {
+    height: 60px;
+    background-color: #122B88;
+    color: white;
     padding-bottom: env(safe-area-inset-bottom);
 }
 
-.bar > .flex {
+#action-bar > .flex {
     justify-content: flex-end;
     align-items: center;
     position: absolute;
-    right: 30px;
     top: 12px;
+}
+
+#tips-bar > .flex {
+    margin-left: 15px;
 }
 
 .bar > .flex > span {
@@ -420,6 +433,14 @@ button:focus {outline:0;}
 .bar__bottom {
     position: fixed;
     bottom: 0;
+}
+
+.bar__bottom__stacked {
+    position: fixed;
+    bottom: 60px;
+    bottom: calc(env(safe-area-inset-bottom) + 60px);        
+    z-index: 101;
+    height: 36px;
 }
 
 .bar__full {
@@ -441,6 +462,7 @@ button:focus {outline:0;}
 
     .gallery {
         padding: 0 15px;
+        margin-bottom: 80px;
     }
 
     .gallery--item--button {
@@ -469,7 +491,15 @@ button:focus {outline:0;}
     .gallery--item--label__primary.show {
         background-color: rgb(30,30,30);
         color: white;
-    }    
+    }
+    
+    #tips-bar {
+        display: none;
+    }
+
+    #action-bar > .flex {
+        right: 30px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -483,6 +513,17 @@ button:focus {outline:0;}
 
     .bar {
         font-size: 90%;
+    }
+
+    .gallery {
+        margin-bottom: 100px;
+        @supports (margin-bottom: env(safe-area-inset-bottom)) {
+            margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 20px);
+        }        
+    }
+
+    #action-bar > .flex{
+        right: 15px;
     }
 }
 
@@ -589,6 +630,11 @@ button:focus {outline:0;}
 
 .flex__row {
     flex-direction: row;
+}
+
+.flex__center {
+    height: 100%;
+    align-items: center;
 }
 
 .flex__column {

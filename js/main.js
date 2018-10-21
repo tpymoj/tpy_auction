@@ -1227,7 +1227,12 @@ function refreshState(){
     subtotal += parseInt(auction_items[itemNumber - 1].starting_bid.replace(/[^0-9.-]+/g,""));
   });
   var statusText = list.length > 0 ? '' + list.length + '件拍賣物 / 底價總和 $' + subtotal: '清單尚未加入任何拍賣物';
-  $('.bar > .flex > span').text(statusText);
+  $('#action-bar > .flex > span').text(statusText);
+  if (list.length > 0) {
+    $('#tips-bar').css('display', 'none');
+  } else {
+    $('#tips-bar').css('display', 'block');
+  }
 }
 
 auction_items.forEach(function(item){
@@ -1343,7 +1348,7 @@ new ClipboardJS('#view-list', {
         alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.starting_bid + '\n';
       });
       alertText += '\n底價總合 $' + subtotal;
-      alert('已將清單內容複製');
+      alert('已將清單內容複製:\n\n' + alertText);
       return alertText;
     } else {
       alert('清單尚未加入任何拍賣物');
@@ -1367,7 +1372,7 @@ $('document').ready(function(){
         elements_selector: ".lazy"
     });    
 
-    if ($(window).width() <= 768) {
-      alert('使用說明\n\n在有興趣的拍賣物上按一下來加入到清單');
-    }
+    // if ($(window).width() <= 768) {
+    //   alert('使用說明\n\n在有興趣的拍賣物上按一下來加入到清單');
+    // }
 });
