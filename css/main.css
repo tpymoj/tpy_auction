@@ -499,16 +499,21 @@ button:focus {outline:0;}
         color: white;
     }
     
-    #tips-bar {
-        display: none;
-    }
-
     #action-bar > .flex {
         right: 30px;
+    }
+
+    #tips-bar {
+        visibility: hidden;
     }
 }
 
 @media only screen and (max-width: 768px) {
+
+    #tips-bar {
+        visibility: visible;
+    }
+
     .bar > .flex {
         right: 20px;
     }
