@@ -1235,6 +1235,25 @@ function refreshState(){
   }
 }
 
+switch(window.location.protocol) {
+  // case 'http:':
+  // case 'https:':
+  //   //remote file over http or https
+  //   break;
+  case 'file:':
+    //local file
+    break;
+  default: 
+    var fontLink = jQuery('<link/>', {
+      href: 'https://fonts.googleapis.com/css?family=Noto+Sans',
+      rel: 'stylesheet',
+    });
+    fontLink.appendTo($('head'));
+    break;
+    //some other protocol
+}
+
+
 auction_items.forEach(function(item){
     var itemContainer = jQuery('<div/>', {
         class: 'gallery--item',
