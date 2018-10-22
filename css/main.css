@@ -523,9 +523,7 @@ button:focus {outline:0;}
 
     .gallery {
         margin-bottom: 100px;
-        @supports (margin-bottom: env(safe-area-inset-bottom)) {
-            margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 20px);
-        }
+        margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 20px);
     }
 
     #action-bar > .flex{
