@@ -1231,7 +1231,9 @@ function refreshState(){
   if (list.length > 0) {
     $('#tips-bar').css('display', 'none');
   } else {
-    $('#tips-bar').css('display', 'block');
+    if ($(window).width() <= 768) {
+      $('#tips-bar').css('display', 'block');
+    }
   }
 }
 
