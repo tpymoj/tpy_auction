@@ -309,8 +309,6 @@ header {
     color: rgb(30,30,30);
     padding-left: 15px;
     padding-right: 15px;
-    padding-right: calc(env(safe-area-inset-right) + 8px);
-    padding-left: calc(env(safe-area-inset-left) + 8px);
 }
 
 .page--subtitle {
@@ -325,13 +323,22 @@ header {
     padding-left: 15px;
     padding-right: 15px;
     border-bottom: 10px solid rgb(255, 59, 48);
-    padding-right: calc(env(safe-area-inset-right) + 8px);
-    padding-left: calc(env(safe-area-inset-left) + 8px);
 }
 
-.gallery {
-    margin-bottom: 80px;
+@supports (padding-right: constant(safe-area-inset-right)) {
+    .page--title, .page--subtitle {
+        padding-right: calc(constant(safe-area-inset-right) + 8px);
+        padding-left: calc(constant(safe-area-inset-left) + 8px);
+    }
 }
+
+@supports (padding-right: constant(safe-area-inset-right)) {
+    .page--title, .page--subtitle {
+        padding-right: calc(env(safe-area-inset-right) + 8px);
+        padding-left: calc(env(safe-area-inset-left) + 8px);
+    }
+}
+
 
 .gallery::after {
     content: '';
@@ -416,8 +423,22 @@ button:focus {outline:0;}
     height: 60px;
     background-color: #122B88;
     color: white;
-    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: calc(36px + 20px);
 }
+
+@supports (padding-bottom: constant(safe-area-inset-bottom)) {
+    #action-bar {
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    #action-bar {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+
 
 #action-bar > .flex {
     justify-content: flex-end;
@@ -442,10 +463,22 @@ button:focus {outline:0;}
 .bar__bottom__stacked {
     position: fixed;
     bottom: 60px;
-    bottom: calc(env(safe-area-inset-bottom) + 60px);        
     z-index: 101;
     height: 36px;
 }
+
+@supports (bottom: constant(safe-area-inset-bottom)) {
+    .bar__bottom__stacked {
+        bottom: calc(constant(safe-area-inset-bottom) + 60px);        
+    }
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+    .bar__bottom__stacked {
+        bottom: calc(env(safe-area-inset-bottom) + 60px);        
+    }
+}
+
 
 .bar__full {
     width: 100%;
@@ -467,9 +500,24 @@ button:focus {outline:0;}
     .gallery {
         padding: 0 15px;
         margin-bottom: 80px;
-        margin-right: calc(env(safe-area-inset-right)/2);
-        margin-left: calc(env(safe-area-inset-left)/2);
+        margin-right: 15px;
+        margin-left: 15px;
     }
+
+    @supports (margin-right: constant(safe-area-inset-right)) {
+        .gallery {
+            margin-right: calc(constant(safe-area-inset-right)/2);
+            margin-left: calc(constant(safe-area-inset-left)/2);
+        }
+    }
+
+    @supports (margin-right: env(safe-area-inset-right)) {
+        .gallery {
+            margin-right: calc(env(safe-area-inset-right)/2);
+            margin-left: calc(env(safe-area-inset-left)/2);
+        }
+    }
+
 
     .gallery--item--button {
         bottom: -10px;
@@ -528,8 +576,20 @@ button:focus {outline:0;}
 
     .gallery {
         margin-bottom: 100px;
-        margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 20px);
     }
+
+    @supports (margin-bottom: constant(safe-area-inset-bottom)) {
+        .gallery {
+            margin-bottom: calc(constant(safe-area-inset-bottom) + 36px + 60px);
+        }
+    }
+
+    @supports (margin-bottom: env(safe-area-inset-bottom)) {
+        .gallery {
+            margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 60px);
+        }
+    }
+
 
     #action-bar > .flex{
         right: 15px;
