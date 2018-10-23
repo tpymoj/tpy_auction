@@ -580,13 +580,13 @@ button:focus {outline:0;}
 
     @supports (margin-bottom: constant(safe-area-inset-bottom)) {
         .gallery {
-            margin-bottom: calc(constant(safe-area-inset-bottom) + 36px + 60px + 20px);
+            margin-bottom: calc(constant(safe-area-inset-bottom) + 36px + 60px);
         }
     }
 
     @supports (margin-bottom: env(safe-area-inset-bottom)) {
         .gallery {
-            margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 60px + 20px);
+            margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 60px);
         }
     }
 
