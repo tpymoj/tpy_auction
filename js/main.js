@@ -239,9 +239,6 @@ galleryStyle.appendTo($('body'));
 $('document').ready(function(){
     var myLazyLoad = new LazyLoad({
         elements_selector: ".lazy"
-    });    
+    });
 
-    // if ($(window).width() <= 768) {
-    //   alert('使用說明\n\n在有興趣的拍賣物上按一下來加入到清單');
-    // }
 });
