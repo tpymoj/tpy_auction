@@ -204,7 +204,7 @@ new ClipboardJS('#view-list', {
         alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.price + '\n';
       });
       alertText += '\n底價總合 $' + subtotal;
-      // alert('已將清單內容複製:\n\n' + alertText);
+      alert('已將清單內容複製:\n\n' + alertText);
       return alertText;
     } else {
       alert('清單尚未加入任何拍賣物');
