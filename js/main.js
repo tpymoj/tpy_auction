@@ -204,7 +204,7 @@ new ClipboardJS('#view-list', {
         alertText += '#' + item.item_number + ' ' + item.item_name + '  $' + item.price + '\n';
       });
       alertText += '\n底價總合 $' + subtotal;
-      alert('已將清單內容複製:\n\n' + alertText);
+      // alert('已將清單內容複製:\n\n' + alertText);
       return alertText;
     } else {
       alert('清單尚未加入任何拍賣物');
@@ -226,9 +226,6 @@ galleryStyle.appendTo($('body'));
 $('document').ready(function(){
     var myLazyLoad = new LazyLoad({
         elements_selector: ".lazy"
-    });    
+    });
 
-    // if ($(window).width() <= 768) {
-    //   alert('使用說明\n\n在有興趣的拍賣物上按一下來加入到清單');
-    // }
 });
