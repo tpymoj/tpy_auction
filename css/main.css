@@ -298,6 +298,54 @@ header {
     background-color: white;
 }
 
+#empty-state-view {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+}
+
+#empty-state-view h1 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#empty-state-view .button {
+    margin: 0px 10px;
+}
+
+#empty-state-view p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+#empty-state-view svg {
+    width: 250px;
+    height: 250px;
+}
+
+.facebook {
+    background-color: rgb(59,89,152);
+    color: white;
+}
+
+.facebook:hover {
+    background-color: rgb(79,109,172);
+}
+
+.link {
+    background-color: #A08F02;
+    color: white;
+}
+
+.link:hover {
+    background-color: #b7a401;
+}
+
 .page--title {
     font-weight: 600;
     font-size: 32px;
@@ -554,6 +602,8 @@ button:focus {outline:0;}
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .button__white {

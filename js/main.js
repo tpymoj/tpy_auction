@@ -60,6 +60,19 @@ switch(window.location.protocol) {
     //some other protocol
 }
 
+if (auction_items.length == 0) {
+  $('#tips-bar').css('display', 'none');
+  $('#action-bar').css('display', 'none');
+  $('header').css('display', 'none');
+  $('#empty-state-view').css('display', 'flex');
+  $('.gallery').css('display', 'none');
+} else {
+  $('#tips-bar').css('display', 'block');
+  $('#action-bar').css('display', 'block');
+  $('header').css('display', 'block');
+  $('#empty-state-view').css('display', 'none');
+  $('.gallery').css('display', 'grid');
+}
 
 auction_items.forEach(function(item){
     var itemContainer = jQuery('<div/>', {
