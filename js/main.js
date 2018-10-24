@@ -173,8 +173,6 @@ auction_items.forEach(function(item){
       var value = $(this).attr('value');
       updateList(value);
     });
-    
-
 
     itemName.appendTo(itemInfoContainer);
     itemDescription.appendTo(itemInfoContainer);
