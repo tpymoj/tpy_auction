@@ -113,7 +113,9 @@ auction_items.forEach(function(item){
     var itemDescription = jQuery('<p/>', {
         class: 'gallery--item--description',
     });
-    itemDescription.text(item.item_description + ', ' + item.quantity + item.unit);
+    // itemDescription.text(item.item_description + ', ' + item.quantity + item.unit);
+    itemDescription.text(item.quantity + item.unit);
+
 
     var itemImageContainer = jQuery('<div/>', {
         class: 'gallery--item--image-container',
@@ -159,6 +161,7 @@ auction_items.forEach(function(item){
     });
     itemLabelPrimary.attr('value', item.item_number);
     itemLabelPrimary.text('底價 $' + item.price);
+    itemLabelPrimary.css('visibility', 'hidden');
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
