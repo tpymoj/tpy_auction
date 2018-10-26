@@ -160,8 +160,7 @@ auction_items.forEach(function(item){
         class: 'gallery--item--label gallery--item--label__primary',
     });
     itemLabelPrimary.attr('value', item.item_number);
-    itemLabelPrimary.text('底價 $' + item.price);
-    itemLabelPrimary.css('visibility', 'hidden');
+    itemLabelPrimary.text(parseInt(item.price) > 0 ? '底價 $' + item.price : '底價未定');
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
