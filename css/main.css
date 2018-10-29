@@ -305,6 +305,7 @@ header {
     align-items: center;
     position: absolute;
     flex-direction: column;
+    display: none;
 }
 
 #empty-state-view h1 {
