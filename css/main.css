@@ -305,6 +305,7 @@ header {
     align-items: center;
     position: absolute;
     flex-direction: column;
+    display: none;
 }
 
 #empty-state-view h1 {
@@ -471,21 +472,7 @@ button:focus {outline:0;}
     height: 60px;
     background-color: #122B88;
     color: white;
-    padding-bottom: calc(36px + 20px);
 }
-
-@supports (padding-bottom: constant(safe-area-inset-bottom)) {
-    #action-bar {
-        padding-bottom: constant(safe-area-inset-bottom);
-    }
-}
-
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-    #action-bar {
-        padding-bottom: env(safe-area-inset-bottom);
-    }
-}
-
 
 
 #action-bar > .flex {
@@ -594,6 +581,10 @@ button:focus {outline:0;}
         background-color: rgb(30,30,30);
         color: white;
     }
+
+    #action-bar {
+        padding-bottom: 0;
+    }
     
     #action-bar > .flex {
         right: 30px;
@@ -637,6 +628,18 @@ button:focus {outline:0;}
             margin-bottom: calc(env(safe-area-inset-bottom) + 36px + 60px);
         }
     }
+
+    @supports (padding-bottom: constant(safe-area-inset-bottom)) {
+        #action-bar {
+            padding-bottom: constant(safe-area-inset-bottom);
+        }
+    }
+    
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+        #action-bar {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    }    
 
 
     #action-bar > .flex{

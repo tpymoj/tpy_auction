@@ -74,7 +74,7 @@ if (auction_items.length == 0) {
   $('.gallery').css('display', 'grid');
 }
 
-auction_items.forEach(function(item){
+auction_items.forEach(function(item, index){
     var itemContainer = jQuery('<div/>', {
         class: 'gallery--item',
     });
@@ -82,8 +82,8 @@ auction_items.forEach(function(item){
     var itemInnerContainer = jQuery('<a/>', {
       class: 'gallery--item--container',
     });
-    itemInnerContainer.attr('value', item.item_number);
-    itemContainer.attr('value', item.item_number);
+    itemInnerContainer.attr('value', index + 1);
+    itemContainer.attr('value', index + 1);
     itemContainer.hover(function(event){
       var galleryItem = $(event.currentTarget);
       galleryItem.find('.gallery--item--button').each(function(index){
@@ -125,7 +125,7 @@ auction_items.forEach(function(item){
         class: 'gallery--item--image lazy',
     });
 
-    itemImage.attr('data-src', 'img/' + String(item.item_number) + '.JPG');
+    itemImage.attr('data-src', 'img/' + String(index + 1) + '.JPG');
 
     var additionalMediaContainer = jQuery('<div/>', {
       class: 'hidden',
@@ -135,8 +135,8 @@ auction_items.forEach(function(item){
       var i = 0;
       while (i < item.num_images - 1) {
         var imageMedia = jQuery('<a/>', {});
-        imageMedia.attr('href', 'img/' + String(item.item_number) + '-' + (i + 1) + '.JPG');
-        imageMedia.attr('data-fancybox', item.item_number);
+        imageMedia.attr('href', 'img/' + String(index + 1) + '-' + (i + 1) + '.JPG');
+        imageMedia.attr('data-fancybox', index + 1);
         imageMedia.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
         imageMedia.appendTo(additionalMediaContainer);
         i++;
@@ -147,8 +147,8 @@ auction_items.forEach(function(item){
       var i = 1;
       while (i <= item.num_videos) {
         var imageMedia = jQuery('<a/>', {});
-        imageMedia.attr('href', 'videos/' + String(item.item_number) + '-' + i + '.mp4');
-        imageMedia.attr('data-fancybox', item.item_number);
+        imageMedia.attr('href', 'videos/' + String(index + 1) + '-' + i + '.mp4');
+        imageMedia.attr('data-fancybox', index + 1);
         imageMedia.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
         imageMedia.appendTo(additionalMediaContainer);
         i++;
@@ -159,9 +159,8 @@ auction_items.forEach(function(item){
     var itemLabelPrimary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__primary',
     });
-    itemLabelPrimary.attr('value', item.item_number);
-    itemLabelPrimary.text('底價 $' + item.price);
-    itemLabelPrimary.css('visibility', 'hidden');
+    itemLabelPrimary.attr('value', index + 1);
+    itemLabelPrimary.text(parseInt(item.price) > 0 ? '底價 $' + item.price : '底價未定');
 
     var itemLabelSecondary = jQuery('<label/>', {
         class: 'gallery--item--label gallery--item--label__secondary',
@@ -175,15 +174,15 @@ auction_items.forEach(function(item){
     var itemViewImageButton = jQuery('<a/>', {
       class: 'gallery--item--button',
     });
-    itemViewImageButton.attr('href', 'img/' + String(item.item_number) + '.JPG');
-    itemViewImageButton.attr('data-fancybox', item.item_number);
+    itemViewImageButton.attr('href', 'img/' + String(index + 1) + '.JPG');
+    itemViewImageButton.attr('data-fancybox', index + 1);
     itemViewImageButton.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
     itemViewImageButton.text('看圖');
 
     var itemAddToListButton = jQuery('<button/>', {
       class: 'gallery--item--button gallery--item--button__add-to-list',
     });
-    itemAddToListButton.attr('value', item.item_number);
+    itemAddToListButton.attr('value', index + 1);
     itemAddToListButton.text('加入清單');
     itemAddToListButton.click(function(){
       var value = $(this).attr('value');
