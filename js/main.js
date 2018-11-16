@@ -125,7 +125,7 @@ auction_items.forEach(function(item, index){
         class: 'gallery--item--image lazy',
     });
 
-    itemImage.attr('data-src', 'img/' + String(index + 1) + '.JPG');
+    itemImage.attr('data-src', 'img/' + item.item_number + '.JPG');
 
     var additionalMediaContainer = jQuery('<div/>', {
       class: 'hidden',
@@ -135,7 +135,7 @@ auction_items.forEach(function(item, index){
       var i = 0;
       while (i < item.num_images - 1) {
         var imageMedia = jQuery('<a/>', {});
-        imageMedia.attr('href', 'img/' + String(index + 1) + '-' + (i + 1) + '.JPG');
+        imageMedia.attr('href', 'img/' + item.item_number + '-' + (i + 1) + '.JPG');
         imageMedia.attr('data-fancybox', index + 1);
         imageMedia.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
         imageMedia.appendTo(additionalMediaContainer);
@@ -147,7 +147,7 @@ auction_items.forEach(function(item, index){
       var i = 1;
       while (i <= item.num_videos) {
         var imageMedia = jQuery('<a/>', {});
-        imageMedia.attr('href', 'videos/' + String(index + 1) + '-' + i + '.mp4');
+        imageMedia.attr('href', 'videos/' + item.item_number + '-' + i + '.mp4');
         imageMedia.attr('data-fancybox', index + 1);
         imageMedia.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
         imageMedia.appendTo(additionalMediaContainer);
@@ -174,7 +174,7 @@ auction_items.forEach(function(item, index){
     var itemViewImageButton = jQuery('<a/>', {
       class: 'gallery--item--button',
     });
-    itemViewImageButton.attr('href', 'img/' + String(index + 1) + '.JPG');
+    itemViewImageButton.attr('href', 'img/' + item.item_number + '.JPG');
     itemViewImageButton.attr('data-fancybox', index + 1);
     itemViewImageButton.attr('data-caption', '#' + item.item_number + ' ' + item.item_name);
     itemViewImageButton.text('看圖');
