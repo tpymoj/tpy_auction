@@ -114,7 +114,7 @@ auction_items.forEach(function(item, index){
         class: 'gallery--item--description',
     });
     // itemDescription.text(item.item_description + ', ' + item.quantity + item.unit);
-    itemDescription.text(item.quantity + item.unit);
+    itemDescription.text(item.item_description != '' ? `${item.item_description}, ${item.quantity} ${item.unit}` : `${item.quantity} ${item.unit}`);
 
 
     var itemImageContainer = jQuery('<div/>', {
