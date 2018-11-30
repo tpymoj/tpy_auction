@@ -114,7 +114,13 @@ auction_items.forEach(function(item, index){
         class: 'gallery--item--description',
     });
     // itemDescription.text(item.item_description + ', ' + item.quantity + item.unit);
-    itemDescription.text(item.item_description != '' ? `${item.item_description}, ${item.quantity} ${item.unit}` : `${item.quantity} ${item.unit}`);
+    var descriptionText;
+    if (item.item_description != '') {
+      descriptionText = item.item_description + ', ' + item.quantity + ' ' + item.unit;
+    } else {
+      descriptionText = item.quantity + ' ' + item.unit;
+    }
+    itemDescription.text(descriptionText);
 
 
     var itemImageContainer = jQuery('<div/>', {
