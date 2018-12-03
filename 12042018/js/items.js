@@ -5,7 +5,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 30000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -16,7 +16,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 20000,
-    "item_description": "",
+    "item_description": "尺寸不詳",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -27,7 +27,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 20000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -38,7 +38,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 8000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -49,7 +49,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -60,7 +60,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 90000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -71,7 +71,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 12000,
-    "item_description": "",
+    "item_description": "尺寸不詳",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -82,7 +82,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 20000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -93,7 +93,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 20000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -104,7 +104,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 16000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -115,7 +115,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -126,7 +126,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 25000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -137,7 +137,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 80000,
-    "item_description": "兔毛製",
+    "item_description": "尺寸不詳",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -148,7 +148,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸38",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -159,7 +159,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 10000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -170,7 +170,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸36",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -181,7 +181,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 18000,
-    "item_description": "",
+    "item_description": "尺寸38",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -192,7 +192,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸XS",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -203,7 +203,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 15000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
@@ -214,7 +214,7 @@ var auction_items = [
     "unit": "件",
     "quantity": 1,
     "price": 20000,
-    "item_description": "",
+    "item_description": "尺寸34",
     "num_images": 1,
     "num_videos": 0,
     "auction_type": "變賣"
