@@ -72,7 +72,7 @@ var auction_items = [
         "quantity": 2,
         "price": "150,000",
         "item_description": "編號196、198   係一套, 尺寸均為36",
-        "num_images": 1,
+        "num_images": 2,
         "num_videos": 0,
         "auction_type": "變賣"
     },
