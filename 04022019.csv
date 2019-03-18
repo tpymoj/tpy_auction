@@ -37,8 +37,7 @@ item_number,item_name,unit,quantity,price,item_description,num_images,num_videos
 207,CHANEL衣服,件,1,50000,尺寸34,1,0,變賣
 208,CHANEL衣服,件,1,40000,尺寸38,1,0,變賣
 209,CHANEL衣服,件,1,15000,尺寸38,1,0,變賣
-252,LOUIS VUITTON,個,1,3000,,1,0,變賣
-,萬用手冊,,,,,1,0,變賣
+252,LOUIS VUITTON 萬用手冊,個,1,3000,,1,0,變賣
 269,HERMES手環手錶,個,1,11000,,1,0,變賣
 271,CHANEL手環,個,1,60000,,1,0,變賣
 272,HERMES手環,個,1,17500,,1,0,變賣
