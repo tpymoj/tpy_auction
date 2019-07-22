@@ -1,7 +1,7 @@
 var auction_items = [
   {
     "item_number": 150,
-    "item_name": "LOUIS VUITTON衣服",
+    "item_name": "LOUIS VUITTON衣服234",
     "unit": "件",
     "quantity": 1,
     "price": "15000",
